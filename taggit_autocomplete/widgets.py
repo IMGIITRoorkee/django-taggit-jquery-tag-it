@@ -19,6 +19,7 @@ class TagAutocomplete(forms.TextInput):
         # Activate tag-it in this field
         js = u"""
             <script type="text/javascript">
+              document.addEventListener('DOMContentLoaded', function() {
                 (function($) {
                     $(document).ready(function() {
                         $("#%(id)s").tagit({
@@ -34,6 +35,7 @@ class TagAutocomplete(forms.TextInput):
                         });
                     });
                 })(jQuery);
+              }, false);
             </script>
             """ % ({
                 'id': attrs['id'],
@@ -46,4 +48,3 @@ class TagAutocomplete(forms.TextInput):
             'all': settings.CSS,
         }
         js = settings.JS
-        

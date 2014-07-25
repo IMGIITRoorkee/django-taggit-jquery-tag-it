@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseBadRequest
-from django.utils import simplejson
+import json as simplejson
 
 from taggit.models import Tag
 
