@@ -29,21 +29,26 @@ Installation
 
 1. We recomend using `pip` and `virtualenv`:
 
+    ```
     pip install -e git+git@github.com:rasca/django-taggit-jquery-tag-it.git#egg=django-taggit-autocomplete
+    ```
 
 2. Add 'tagging_autocomplete' to INSTALLED_APPS in your project's `settings.py`
    file:
-
+```python
     INSTALLED_APPS = (
 
     'tagging',    
     'tagging\_autocomplete',
 
     \# ...
+    ```
 
 3. Add the following line in you project's `urls.py` file:
 
+    ```python
     (r'^taggit\_autocomplete/', include('taggit\_autocomplete.urls')),
+    ```
 
 4. You should provide jQuery and jQuery UI (and a theme). If they aren't
    available in the current context, set `TAGGIT_AUTOCOMPLETE_CSS` and
@@ -59,8 +64,10 @@ in the tagged models.
 
 Example:
 
+```python
     from django.db import models
     from taggit_autocomplete.managers import TaggableManager
     
     class SomeModel(models.Model):
         tags = TaggableManager()
+```
